@@ -6,7 +6,7 @@ metadata:
     component: ks-sample-dev
     tier: backend
   name: ks-sample-dev
-  namespace: kp-sample-dev9lcn2
+  namespace: java-springboot
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
