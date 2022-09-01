@@ -1,4 +1,3 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -49,26 +48,3 @@ spec:
           dnsPolicy: ClusterFirst
           restartPolicy: Always
           terminationGracePeriodSeconds: 30
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app: kubesphere
-    component: ks-sample-dev
-  name: ks-sample-dev
-  namespace: java-springboot
-spec:
-  ports:
-    - name: http
-      port: 8080
-      protocol: TCP
-      targetPort: 8080
-      nodePort: 30861
-  selector:
-    app: kubesphere
-    component: ks-sample-dev
-    tier: backend
-  sessionAffinity: None
-  type: NodePort
