@@ -23,7 +23,7 @@ spec:
         tier: backend
     spec:
       imagePullSecrets:
-        - aliyun-docker-hub
+        - name: aliyun-docker-hub
       containers:
         - env:
             - name: REDIS_HOST
