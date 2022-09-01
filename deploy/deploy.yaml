@@ -22,6 +22,8 @@ spec:
         component: ks-sample-dev
         tier: backend
     spec:
+      imagePullSecrets:
+        - aliyun-docker-hub
       containers:
         - env:
             - name: REDIS_HOST
