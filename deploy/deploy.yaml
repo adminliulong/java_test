@@ -29,13 +29,6 @@ spec:
             - name: REDIS_HOST
               value: redis-ahwrd7
           image: $REGISTRY/$DOCKERHUB_NAMESPACE/devops-java-simple:$BUILD_NUMBER
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 8090
-            timeoutSeconds: 10
-            failureThreshold: 30
-            periodSeconds: 5
           imagePullPolicy: Always
           name: ks-sample
           ports:
