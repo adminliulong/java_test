@@ -23,7 +23,9 @@ spec:
         tier: backend
     spec:
       containers:
-        - name: ks-sample
+        - env:
+            - name: REDIS_HOST
+              value: redis-ahwrd7
           image: $REGISTRY/$DOCKERHUB_NAMESPACE/devops-java-simple:$BUILD_NUMBER
           readinessProbe:
             httpGet:
@@ -32,7 +34,8 @@ spec:
             timeoutSeconds: 10
             failureThreshold: 30
             periodSeconds: 5
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
+          name: ks-sample
           ports:
             - containerPort: 8080
               protocol: TCP
@@ -45,6 +48,6 @@ spec:
               memory: 100Mi
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
-          dnsPolicy: ClusterFirst
-          restartPolicy: Always
-          terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
