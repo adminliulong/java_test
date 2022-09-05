@@ -28,7 +28,7 @@ spec:
         - env:
             - name: REDIS_HOST
               value: redis-ahwrd7
-          image: $REGISTRY/$DOCKERHUB_NAMESPACE/devops-java-simple:$BUILD_NUMBER
+          image: $REGISTRY:30443/$DOCKERHUB_NAMESPACE/devops-java-simple:$BUILD_NUMBER
           imagePullPolicy: Always
           name: ks-sample
           ports:
