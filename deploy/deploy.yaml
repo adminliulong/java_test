@@ -6,7 +6,7 @@ metadata:
     component: test
     tier: test
   name: ks-sample-dev
-  namespace: many-cluster
+  namespace: ttc-cluster
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
