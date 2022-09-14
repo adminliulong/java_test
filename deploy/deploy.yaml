@@ -23,7 +23,7 @@ spec:
         tier: test
     spec:
       imagePullSecrets:
-        - name: aliyun-docker-hub
+        - name: uni-docker-hub
       containers:
         - env:
             - name: REDIS_HOST
