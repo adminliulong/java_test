@@ -22,8 +22,6 @@ spec:
         component: test
         tier: test
     spec:
-      imagePullSecrets:
-        - name: uni-docker-hub
       containers:
         - env:
             - name: REDIS_HOST
@@ -43,6 +41,7 @@ spec:
               memory: 100Mi
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
+      serviceAccountName: harbor-sa
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
